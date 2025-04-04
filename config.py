@@ -12,14 +12,14 @@ TEST_PROMPTS_FILE = 'test_prompts.csv'
 OLLAMA_REQUESTS_LOG = 'ollama_requests.log'
 
 # Feature flags
-USE_STORED_RESPONSES = True  # Whether to load and use stored responses
-OLLAMA_OVERRIDE_MODEL = True  # Whether to override the model in Ollama requests
-OLLAMA_FALLBACK_MODEL = 'llama3.1:latest'  # Model to use when OLLAMA_OVERRIDE_MODEL is True
-OLLAMA_CAP_TEMPERATURE = True  # Whether to cap temperature at 1.0 for Ollama requests
+USE_STORED_RESPONSES = True  # Use stored responses (define stored reponses in CONTROL_PROMPTS_FILE and TEST_PROMPTS_FILE - used to remove certain prompts from real inference)
+OLLAMA_OVERRIDE_MODEL = True  # Whether to override the model in Ollama requests (If you plan to preload a model in memory and set keep_alive in Ollama for testing)
+OLLAMA_FALLBACK_MODEL = 'llama3.1:latest'  # Model to use if OLLAMA_OVERRIDE_MODEL is True (whatever default model you want to use)
+OLLAMA_CAP_TEMPERATURE = True  # Whether to cap temperature at 1.0 for Ollama requests (prevent unneccessarily high temp inference requests)
 
 API_GATEWAY_URL = "yourendpoint.url"
 API_AUTH_URL = "yourendpoint.url"
-OLLAMA_API_URL = "http://localhost:11434/api/chat"
+OLLAMA_API_URL = "http://localhost:11434/api/chat" 
 
 # Node Starting Delays (in seconds)
 MIN_START_DELAY = 1

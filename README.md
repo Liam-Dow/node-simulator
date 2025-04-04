@@ -1,8 +1,11 @@
 # LLM Worker Node Simulator
 
-This codebase is designed to create a fully locally hosted decentralised network of nodes that are processing a queue of open source LLM inference requests with a JWT-secured API endpoint.
+Note: This is a personal project I worked on in early/mid 2024, based on the idea of a decentralised network of Ollama nodes which poll for requests during their idle compute time. The goal was to test the concept at scale by simulating up to 1,000 concurrent nodes but prevent the need to pay for cloud compute costs or have to handle the memory overhead of running each node in a container individually (my initial approach).
 
-Each simulated node is defined in a configuration CSV with each row representing an independent worker nodes operating in a pull-based architecture. Nodes poll a central API backed by RabbitMQ for AI inference jobs and offload jobs to a shared, self-hosted Ollama server AND/OR optionally can pull from a list of predefined prompt responses if a match is found.
+This project creates a fully locally hosted, decentralised network of nodes that process a queue of open-source LLM inference requests via a JWT-secured API.
+
+Each simulated node is defined in a configuration CSV, with each row representing an independent worker operating in a pull-based architecture. Nodes poll a central API (backed by RabbitMQ) for AI inference jobs, then offload those jobs to a shared, self-hosted Ollama server — or optionally return stored responses when matched.
+
 
 ## Components
 
@@ -113,6 +116,9 @@ Once registered, each `WorkerNodeSimulator` runs a `job_processing_loop`:
 ## Setup and Installation
 
 1. **Clone the repository**
+    ```bash
+    git clone https://github.com/Liam-Dow/node-simulator.git
+    ```
 
 2. **Install dependencies**
    ```bash
