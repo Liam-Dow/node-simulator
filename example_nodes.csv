@@ -1,0 +1,2 @@
+node_id,secret,account_id,pub_key,private_key,proxy,models,ram,cpu,vram,gpu,os
+node_12345abcdef,s3cr3t_k3y_example,acc_67890,MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...,MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBK...,123.45.67.89:8080,llama3:latest|llama3.1:latest|mistral:latest|mixtral:latest,16384,8,8192,NVIDIA RTX 3080,Linux
